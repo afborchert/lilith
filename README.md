@@ -55,18 +55,18 @@ have.
 
 Here is a step-by-step instruction how this can be set up:
 
-1. Download the newest release of the simulator (at the time of this
+ * Download the newest release of the simulator (at the time of this
    writing this is
    [simhv311-0.zip](http://simh.trailing-edge.com/sources/simhv311-0.zip),
    compile, and install it. We need the id32 binary that simulates an
    Interdata 8/32.
 
-2. Download [iu7swre.zip](http://simh.trailing-edge.com/kits/iu7swre.zip)
+ * Download [iu7swre.zip](http://simh.trailing-edge.com/kits/iu7swre.zip)
    and unpack it. (The license by Caldera is to be found in the file
    _AncientUnix.pdf_). The associated documentation is to be found
    [here](http://simh.trailing-edge.com/pdf/id_doc.pdf).
 
-3. The most efficient method to transfer files to this system is by
+ * The most efficient method to transfer files to this system is by
    preparing a tar file that is made available as a disk. Under the
    UNIX system, we do not mount this disk but let tar unpack this
    archive from the raw device. This, however, works only reliably if
@@ -81,7 +81,7 @@ Here is a step-by-step instruction how this can be set up:
 
    You have now a tar archive named _modula.tar_.
 
-4. Creating a working directory and prepare a file named _id32.ini_
+ * Create a working directory and prepare a file named _id32.ini_
    in it:
 
    ```
@@ -94,10 +94,10 @@ Here is a step-by-step instruction how this can be set up:
    boot dp0
    ```
 
-5. Copy or symlink _iu7_dp0.dsk_, _iu7_dp1.dsk_, and _modula.tar_
+ * Copy or symlink _iu7_dp0.dsk_, _iu7_dp1.dsk_, and _modula.tar_
    into the working directory.
 
-6. Start the simulator of the Interdata 8/32:
+ * Start the simulator of the Interdata 8/32:
 
    ```
    theon$ id32
@@ -107,7 +107,8 @@ Here is a step-by-step instruction how this can be set up:
    Boot
    : dsk(1,0)unix
    Memory = 248.0 K
-   # Restricted rights: Use, duplication, or disclosure is subject
+   # ^D
+   Restricted rights: Use, duplication, or disclosure is subject
    to restrictions stated in your contracts with Western Electric
    Company, Inc. and the University of Wollongong.
    Fri Jan  2 18:12:57 EST 1970
@@ -120,12 +121,16 @@ Here is a step-by-step instruction how this can be set up:
    (Please note that ^D represents CTRL-d and that the root password
    is not echoed.)
 
-7. In the next step we unpack the prepared tar archive into the _/tmp_
+ * In the next step we unpack the prepared tar archive into the _/tmp_
    directory. This is the only location where sufficient space is left.
    The _modula.tar_ archive is available through _/dev/dr2_ (block device)
    and _/dev/rdr2_ (raw device) which need to be created first:
 
    ```
+   # cd /dev
+   # /etc/mknod dr2 b 0 4
+   # /etc/mknod rdr2 c 2 4
+   # cd /tmp
    # tar xf /dev/rdr2
    Tar: blocksize = 20
    tar: modula/ - cannot create
@@ -141,7 +146,7 @@ Here is a step-by-step instruction how this can be set up:
 
    (The error messages of tar can be ignored.)
 
-8. Now we can add _/tmp/modula/bin_ to our path and attempt
+ * Now we can add _/tmp/modula/bin_ to our path and attempt
    to compile a first “hello world” program in the
    directory _/tmp/modula/work_ which serves as working directory:
 
@@ -195,7 +200,7 @@ Here is a step-by-step instruction how this can be set up:
    the files _C18.Base_ etc. to be present in the current
    directory or at some obscure path.
 
-9. If the compilation was successful (as shown above), we got an
+ * If the compilation was successful (as shown above), we got an
    object file named _HelloWorld.o_ which by itself alone is not
    yet executable on the Lilith emulator. We can, however, decode
    it if we like to:
@@ -262,7 +267,7 @@ Here is a step-by-step instruction how this can be set up:
    of 16 bits. Some of the instructions require one byte only (like
    _RTN_), others are longer (_CX_, for example, requires three bytes).
 
-10. In the next step we can attempt to create a binary which is
+ * In the next step we can attempt to create a binary which is
    actually executable on the Lilith emulator. For this we will need
    the _Terminal.o_ object out of the _OBJECTS_ archive:
 
@@ -385,7 +390,7 @@ Here is a step-by-step instruction how this can be set up:
    their selection, even _InOut_ is missing as I considered strictly
    those sources only which were required for bootstrapping.
 
-11. If you want to save the current state of this simulated UNIX system
+ * If you want to save the current state of this simulated UNIX system
    for further experiments, you will need a clean shutdown procedure.
    Commands like shutdown or halt didn't exist at that time. Hence we
    have only _sync_. Type it twice and let some seconds pass. Type CTRL-e
