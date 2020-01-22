@@ -1,4 +1,4 @@
-# Historic Material of our Modula-2 System
+# Historic Lilith emulator and Modula-2 compiler
 
 ## Introduction
 
