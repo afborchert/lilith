@@ -359,24 +359,24 @@ Here is a step-by-step instruction how this can be set up:
    in decimal notation):
 
    ```C
-        case 65 :       /* PROCEDURE WriteString(s: ARRAY OF CHAR); */
-                len = pop() + 1;
-                index = pop();
-                ptr = (char *) &stack[index];
-#ifdef TRACE
-                trace("WriteString(\"");
-#endif TRACE
-                while ( len && *ptr ) {
-#ifdef TRACE
-                        trace("%c",*ptr);
-#endif TRACE
-                        putchar(*ptr++);
-                        --len;
-                        }
-#ifdef TRACE
-                trace("\")\n");
-#endif TRACE
-                break;
+	   case 65 :       /* PROCEDURE WriteString(s: ARRAY OF CHAR); */
+		   len = pop() + 1;
+		   index = pop();
+		   ptr = (char *) &stack[index];
+   #ifdef TRACE
+		   trace("WriteString(\"");
+   #endif TRACE
+		   while ( len && *ptr ) {
+   #ifdef TRACE
+			   trace("%c",*ptr);
+   #endif TRACE
+			   putchar(*ptr++);
+			   --len;
+			   }
+   #ifdef TRACE
+		   trace("\")\n");
+   #endif TRACE
+		   break;
    ```
 
    These objects were not derived from the original sources but from
