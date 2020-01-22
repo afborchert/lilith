@@ -1,0 +1,15 @@
+[submodule "lilith-emulator"]
+	path = lilith-emulator
+	url = https://github.com/afborchert/lilith-emulator.git
+[submodule "mcode-decoder"]
+	path = mcode-decoder
+	url = https://github.com/afborchert/mcode-decoder.git
+[submodule "mcode-linker"]
+	path = mcode-linker
+	url = https://github.com/afborchert/mcode-linker.git
+[submodule "lilith-multipass-modula2-compiler"]
+	path = lilith-multipass-modula2-compiler
+	url = https://github.com/afborchert/lilith-multipass-modula2-compiler.git
+[submodule "lilith-binaries"]
+	path = lilith-binaries
+	url = https://github.com/afborchert/lilith-binaries.git
