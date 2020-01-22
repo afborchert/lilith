@@ -5,13 +5,13 @@ used to bootstrap to a Modula-2 compiler for the Lilith architecture
 running on a Lilith emulator on a Perkin-Elmer 3220 machine running UNIX
 Edition 7. All this happened in summer 1983.
 
-I haven't changed any of the sources. This means that the emulator and
-its associated tools can no longer be compiled with recent C compilers
-and even if you manage to get rid of all the K&R style within the C
-sources, it won't work because of huge portability problems. These
-utilities were just developed to serve in the development of a Modula-2
-compiler for the Perkin-Elmer 3220 architecture and were no longer
-needed once this goal was achieved.
+I haven't changed any of the sources. This means that the emulator
+and its associated tools can no longer be compiled with recent C
+compilers and even if you manage to get rid of all the K&R style
+dependencies within the C sources, it won't work because of huge
+portability problems. These utilities were just developed to serve
+in the development of a Modula-2 compiler for the Perkin-Elmer 3220
+architecture and were no longer needed once this goal was achieved.
 
 Following components are included in the submodules of this
 repository:
@@ -35,7 +35,7 @@ licence before you download it.
 More instructions on how to play with these tools can be found at
 http://www.mathematik.uni-ulm.de/modula/history/
 
-== Downloading ==
+## Downloading
 
 If you want to clone it, you should do this recursively:
 
