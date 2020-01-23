@@ -418,4 +418,8 @@ If you want to clone it, you should do this recursively:
 git clone --recursive https://github.com/afborchert/lilith.git
 ```
 
-Andreas F. Borchert
+## See also
+
+Following compilers resulted from this bootstrapping process:
+ * https://github.com/afborchert/modula-3200
+ * https://github.com/afborchert/modula-m68k
