@@ -433,3 +433,14 @@ git clone --recursive https://github.com/afborchert/lilith.git
 Following compilers resulted from this bootstrapping process:
  * https://github.com/afborchert/modula-3200
  * https://github.com/afborchert/modula-m68k
+
+More materials about Lilith can be found in the _bitsavers_
+archives:
+
+ * http://bitsavers.trailing-edge.com/pdf/eth/lilith/
+
+Of particular interest is an appendix in a report about the Lilith,
+titled _The M-code Interpreter (in Modula-2)_ which helped to
+develop the Lilith emulator:
+
+ * http://bitsavers.trailing-edge.com/pdf/eth/lilith/Lilith_mcode_interpreter.pdf
