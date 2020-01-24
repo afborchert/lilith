@@ -200,6 +200,16 @@ Here is a step-by-step instruction how this can be set up:
    the files _C18.Base_ etc. to be present in the current
    directory or at some obscure path.
 
+   You might wonder where the _Terminal.sy_ file comes
+   from. If a symbol file (with ending “.sy”) is not
+   found, the Lilith emulator looks for an archive
+   named _SYM_ and attempts to extract the requested
+   symbol file from that archive. The _SYM_ archive
+   is shipped in _lilith-multipass-modula2-compiler/src/SYM_
+   but you will not be able to unpack this on modern systems
+   as the _ar_ archive file format has been changed since
+   Unix Edition 7 to accommodate longer filenames.
+
  * If the compilation was successful (as shown above), we got an
    object file named _HelloWorld.o_ which by itself alone is not
    yet executable on the Lilith emulator. We can, however, decode
